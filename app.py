@@ -6,7 +6,7 @@ authors: Sawyer Vaughan and Chris Wallace
 
 from flask import Flask
 from flask import render_template, redirect, request
-
+from SpotifyLogic import spotifyFunctions
 
 spotifyClasses = []
 
@@ -24,7 +24,9 @@ def start():
 def authenticate():
 	x = request.form['user']
 	y = request.form['password']
-	new_user = 
+	new_user = spotifyLogic.spotifyFunctions()
+	new_user.login(x,y)
+	print new_user.validLogin
 	return 'hi'
 
 @app.route('/url_not_found')
