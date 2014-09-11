@@ -45,7 +45,7 @@ class SpotifyFunctions(object):
 		if self.session.connection.state > 0:
 			self.validLogin = True
 			self.name = username
-			#print self.SessionCallbacks.CREDENTIALS_BLOB_UPDATED
+			print self.SessionCallbacks.credentials_blob_updated()
 
 		else:
 			self.validLogin = False
