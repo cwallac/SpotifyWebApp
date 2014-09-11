@@ -41,14 +41,16 @@ class SpotifyFunctions(object):
 	def login(self,username,password):
 		self.session.login(username,password)
 		self.session.process_events()
+		self.session.process_events()
 		
 		if self.session.connection.state > 0:
 			self.validLogin = True
 			self.name = username
-			print self.SessionCallbacks.credentials_blob_updated()
+			#print self.SessionCallbacks.credentials_blob_updated()
 
 		else:
 			self.validLogin = False
+			print "UNSUCCESSFUL"
 		
 
 		
